@@ -28,9 +28,21 @@ function swu_enqueue_script( $hook ) {
 	);
 
 	wp_localize_script( 'stand-with-ukraine', 'swu_options', array(
-		'text' => esc_html( __( '#StandWithUkraine',      SWU_TEXT_DOMAIN ) ),
-		'url'  => esc_url( __( 'https://war.ukraine.ua/', SWU_TEXT_DOMAIN ) )
-	) );
+		'text' =>
+			esc_html(
+				apply_filters(
+					'swu_banner_text',
+					__( '#StandWithUkraine',      SWU_TEXT_DOMAIN )
+				)
+			),
+		'url'  =>
+			esc_url(
+				apply_filters(
+					'swu_banner_url',
+					__( 'https://war.ukraine.ua/', SWU_TEXT_DOMAIN )
+				)
+			)
+		) );
 
 	wp_enqueue_script( 'stand-with-ukraine' );
 }

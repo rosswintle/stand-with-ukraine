@@ -12,6 +12,10 @@ Displays a banner and link on your site to show your support for Ukraine.
 
 Styles are output inline for performance reasons, but can be filtered using the `swu_banner_styles` filter hook should you wish to customise them.
 
+The text can be filtered with the `swu_banner_text` filter hook. This escapes HTML so use only plain text.
+
+The URL of the link can be filtered with the `swu_banner_url` filter hook.
+
 == Description ==
 
 Displays a banner on your site to show your support for Ukraine. Customize your banner using the #stand_with_ukraine_overlay id attribute.
